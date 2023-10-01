@@ -35,36 +35,12 @@ export default (props) => {
      * 
      */
 
-    // if(!props.isOpened) return null;
-    // return (
-    //     <ScrollView showsVerticalScrollIndicator = {false} contentContainerStyle={{paddingBottom : bottomSpace}}>
-    //         {props.data.map((item, index) => (
-    //             <View key= {index}>
-    //                 <Profile
-                        
-    //                     uri={item.uri}
-    //                     name={item.name} 
-    //                     introduction={item.introduction}
-
-    //                 />    
-    //                 <Margin height = {13}/>
-    //             </View>
-                
-    //         ))}
-    //     </ScrollView>
-    // ) 
-
-    /**
-     * 
-     * Case 3. && 이용
-     * 
-     */
-
-    return props.isOpened && (
-        <ScrollView showsVerticalScrollIndicator = {false} contentContainerStyle={{paddingBottom : bottomSpace}}>
-           {props.data.map((item, index) => (
-               <View key= {index}>
-                   <Profile
+    if(!props.isOpened) return null;
+    return (
+        <ScrollView showsVerticalScrollIndicator = {false} >
+            {props.data.map((item, index) => (
+                <View key= {index}>
+                    <Profile
                         
                         uri={item.uri}
                         name={item.name} 
@@ -74,7 +50,31 @@ export default (props) => {
                     <Margin height = {13}/>
                 </View>
                 
-           ))}
+            ))}
         </ScrollView>
-    )
+    ) 
+
+    /**
+     * 
+     * Case 3. && 이용
+     * 
+     */
+
+    // return props.isOpened && (
+    //     <ScrollView showsVerticalScrollIndicator = {false} contentContainerStyle={{paddingBottom : bottomSpace}}>
+    //        {props.data.map((item, index) => (
+    //            <View key= {index}>
+    //                <Profile
+                        
+    //                     uri={item.uri}
+    //                     name={item.name} 
+    //                     introduction={item.introduction}
+
+    //                 />    
+    //                 <Margin height = {13}/>
+    //             </View>
+                
+    //        ))}
+    //     </ScrollView>
+    // )
 }
